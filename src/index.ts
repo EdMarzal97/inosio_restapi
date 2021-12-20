@@ -1,4 +1,6 @@
-import express from 'express';
+import { App } from './app';
 
-const app = express();
-
+async function main(){
+    const app = new App();
+    await app.listen();
+}

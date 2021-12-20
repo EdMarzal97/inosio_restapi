@@ -8,11 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./app");
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const app = new app_1.App();
-        yield app.listen();
-    });
+exports.App = void 0;
+const express_1 = __importDefault(require("express"));
+const app = (0, express_1.default)();
+class App {
+    constructor() {
+        this.app = (0, express_1.default)();
+    }
+    listen() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.app.listen(5000);
+            console.log('Server on port', 5000);
+        });
+    }
 }
+exports.App = App;
