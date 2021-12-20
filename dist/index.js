@@ -16,3 +16,4 @@ function main() {
         yield app.listen();
     });
 }
+main();
