@@ -10,10 +10,15 @@ export class App{
     constructor(private port?: number | string ) {
         this.app = express();
         this.settings();
+        this.middleware();
     }
 
     settings() {
         this.app.set('port', this.port || process.env.PORT || 5000);
+    }
+
+    middleware(){
+        this.app.use(morgan('dev'));
     }
 
     async listen() {
