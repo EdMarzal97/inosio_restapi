@@ -1,0 +1,3 @@
+# inosio_restapi
+
+REST API DEVELOPED FOR INOSIO AS AN EXAMPLE
